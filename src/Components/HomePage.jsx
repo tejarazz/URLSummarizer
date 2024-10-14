@@ -57,7 +57,7 @@ const HomePage = () => {
       </header>
 
       <section className="flex flex-col items-center pt-10 px-4">
-        <p className="font-extrabold text-3xl md:text-6xl pb-2">
+        <p className="font-extrabold text-3xl text-center lg:text-start md:text-6xl pb-2">
           Summarize Articles with
         </p>
         <p className="font-bold text-4xl md:text-6xl pb-5 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
@@ -123,11 +123,15 @@ const HomePage = () => {
         </form>
 
         {summary && (
-          <div className="my-5 bg-white rounded-lg py-10 shadow-lg w-3/5 text-justify flex flex-col items-center">
-            <h3 className="font-bold text-3xl text-gray-800 mb-8">Summary:</h3>
-            <Markdown className="w-full px-20 prose-headings:text-xl prose-headings:font-bold prose-p:pt-3 prose-li:py-1">
-              {summary}
-            </Markdown>
+          <div className="my-5 bg-white rounded-lg py-10 shadow-lg lg:w-3/5 text-justify flex flex-col items-center">
+            <h3 className="font-bold text-xl lg:text-3xl text-gray-800">
+              Summary:
+            </h3>
+            <div className="prose flex flex-col justify-center lg:px-0 px-4 items-center w-full">
+              <Markdown className="text-sm lg:text-base prose-headings:text-start prose-li:text-start prose-p:text-start lg:prose-p:text-justify lg:prose-li:text-justify lg:w-[50vw]">
+                {summary}
+              </Markdown>
+            </div>
           </div>
         )}
       </section>
