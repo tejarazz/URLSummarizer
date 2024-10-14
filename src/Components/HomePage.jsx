@@ -3,6 +3,7 @@ import { FaArrowUp } from "react-icons/fa";
 import { IoMdLink } from "react-icons/io";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Markdown from "react-markdown";
+import { Link } from "react-router-dom";
 
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_PUBLIC_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -48,9 +49,11 @@ const HomePage = () => {
           />
           <h1 className="text-2xl md:text-4xl font-bold">TextBite</h1>
         </div>
-        <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-neutral-700 md:px-6">
-          GitHub
-        </button>
+        <Link to="https://github.com/tejarazz/URLSummarizer">
+          <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-neutral-700 md:px-6">
+            GitHub
+          </button>
+        </Link>
       </header>
 
       <section className="flex flex-col items-center pt-10 px-4">
